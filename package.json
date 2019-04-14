@@ -6,8 +6,9 @@
     "build": "webpack",
     "lint": "eslint ./**/*.js",
     "lint-fix": "eslint --fix ./**/*.js",
+    "size": "size-limit",
     "start:dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm -v"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +27,7 @@
     "prettier": "^1.16.4",
     "raw-loader": "^2.0.0",
     "sass-loader": "^7.1.0",
+    "size-limit": "^1.0.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
@@ -43,6 +45,12 @@
       "git add"
     ]
   },
+  "size-limit": [
+    {
+      "path": "dist/bundle.js",
+      "limit": "550 KB"
+    }
+  ],
   "dependencies": {
     "backbone": "^1.4.0",
     "faker": "^4.1.0",
