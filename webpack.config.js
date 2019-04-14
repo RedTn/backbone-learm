@@ -24,12 +24,20 @@ module.exports = {
                     'css-loader', // translates CSS into CommonJS
                     'sass-loader' // compiles Sass to CSS, using Node Sass by default
                 ]
+            },
+            {
+                test: /\.tpl$/,
+                use: 'raw-loader'
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
+            title: 'Backbonejs',
             template: 'src/index.html'
         })
-    ]
+    ],
+    resolve: {
+        modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    }
 };
