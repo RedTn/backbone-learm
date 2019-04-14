@@ -105,7 +105,7 @@ workflows:
             - build-job
       - deployment-job:
           requires:
-            - build-storybook-job
+            - build-job
           filters:
             branches:
               only: master
