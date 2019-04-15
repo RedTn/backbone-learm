@@ -6,6 +6,7 @@ import AppView from 'views/basicView';
 import singleFlower from 'models/singleFlowerModel';
 import flowersCollection from 'collections/allFlowers';
 import allFlowersView from 'views/allFlowersView';
+import Router from 'routes/router';
 
 const redRoses = new singleFlower({
     name: 'Red Roses',
@@ -36,6 +37,10 @@ flowerGroup.add(heirloomRoses);
 const flowerGroupView = new allFlowersView({ collection: flowerGroup });
 
 $('#allFlowers').html(flowerGroupView.render().el);
+
+new Router();
+
+Backbone.history.start();
 
 // Execute after the DOM has loaded
 Backbone.$(function() {
